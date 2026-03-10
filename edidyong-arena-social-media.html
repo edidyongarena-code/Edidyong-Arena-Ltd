@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edidyong Arena Ltd — Social Media Presence Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,800;1,300&family=Barlow+Condensed:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --deep: #111318;
+    --card: #16191f;
+    --border: #252830;
+    --gold: #f0b429;
+    --gold-dim: #a07820;
+    --red: #e03535;
+    --white: #f4f4f0;
+    --grey: #8a8f9e;
+    --light: #c8ccd8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 24px;
+    background: radial-gradient(ellipse at 50% 60%, #1a1c2a 0%, var(--black) 70%);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(240,180,41,0.04) 39px,
+      rgba(240,180,41,0.04) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      rgba(240,180,41,0.04) 39px,
+      rgba(240,180,41,0.04) 40px
+    );
+  }
+
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(72px, 14vw, 180px);
+    line-height: 0.88;
+    letter-spacing: 2px;
+    position: relative;
+  }
+
+  .hero h1 .arena {
+    display: block;
+    color: var(--gold);
+    -webkit-text-stroke: 2px var(--gold);
+  }
+
+  .hero h1 .edidyong {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--white);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--grey);
+    margin-top: 28px;
+    max-width: 540px;
+    position: relative;
+    letter-spacing: 0.5px;
+  }
+
+  .platforms-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+
+  .platform-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--light);
+    background: rgba(255,255,255,0.03);
+    transition: all 0.3s;
+  }
+
+  .platform-badge:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(240,180,41,0.06);
+  }
+
+  .platform-badge svg { width: 16px; height: 16px; fill: currentColor; }
+
+  /* ===== SECTIONS ===== */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1;
+    margin-bottom: 48px;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+  }
+
+  /* ===== BRAND IDENTITY ===== */
+  .brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .brand-block {
+    background: var(--card);
+    padding: 32px 28px;
+  }
+
+  .brand-block-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 16px;
+  }
+
+  .color-swatch {
+    width: 56px;
+    height: 56px;
+    border-radius: 2px;
+    margin-bottom: 12px;
+  }
+
+  .swatch-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .swatch-hex {
+    font-size: 12px;
+    color: var(--grey);
+    font-family: monospace;
+  }
+
+  .voice-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .voice-tag {
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    font-size: 13px;
+    color: var(--light);
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  /* ===== BIO SECTION ===== */
+  .bio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .bio-card {
+    background: var(--card);
+    padding: 32px 28px;
+    position: relative;
+  }
+
+  .bio-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+  }
+
+  .bio-card.ig::before { background: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+  .bio-card.fb::before { background: #1877f2; }
+  .bio-card.tt::before { background: #000; }
+  .bio-card.tw::before { background: #1d9bf0; }
+
+  .bio-platform {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .bio-handle {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .bio-text {
+    font-size: 14px;
+    color: var(--light);
+    line-height: 1.7;
+    border-left: 2px solid var(--border);
+    padding-left: 16px;
+    margin-bottom: 16px;
+    white-space: pre-line;
+  }
+
+  .bio-char-count {
+    font-size: 11px;
+    color: var(--grey);
+    font-family: monospace;
+  }
+
+  /* ===== CONTENT PILLARS ===== */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .pillar-card {
+    border: 1px solid var(--border);
+    padding: 28px 24px;
+    background: var(--card);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .pillar-card:hover { border-color: var(--gold-dim); }
+
+  .pillar-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    line-height: 1;
+    color: rgba(240,180,41,0.06);
+    position: absolute;
+    top: -10px; right: 8px;
+  }
+
+  .pillar-icon { font-size: 28px; margin-bottom: 12px; }
+
+  .pillar-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .pillar-desc {
+    font-size: 13px;
+    color: var(--grey);
+    line-height: 1.6;
+  }
+
+  /* ===== CONTENT CALENDAR ===== */
+  .calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .calendar-table th {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--grey);
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    background: var(--card);
+  }
+
+  .calendar-table td {
+    padding: 16px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--light);
+    vertical-align: top;
+    background: var(--deep);
+  }
+
+  .calendar-table tr:hover td { background: var(--card); }
+
+  .day-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  .post-type {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .type-reel { background: rgba(240,60,60,0.15); color: #ff7070; border: 1px solid rgba(240,60,60,0.3); }
+  .type-photo { background: rgba(240,180,41,0.12); color: var(--gold); border: 1px solid rgba(240,180,41,0.25); }
+  .type-story { background: rgba(100,180,255,0.1); color: #7ec8ff; border: 1px solid rgba(100,180,255,0.2); }
+  .type-carousel { background: rgba(160,100,255,0.1); color: #c090ff; border: 1px solid rgba(160,100,255,0.2); }
+
+  .platform-dots {
+    display: flex; gap: 5px; flex-wrap: wrap; margin-top: 6px;
+  }
+
+  .pdot {
+    font-size: 10px;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 1px;
+    color: var(--grey);
+    border: 1px solid var(--border);
+  }
+
+  /* ===== CAPTIONS ===== */
+  .captions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .caption-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 28px 24px;
+    transition: border-color 0.3s;
+  }
+
+  .caption-card:hover { border-color: var(--gold-dim); }
+
+  .caption-use {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  .caption-body {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--light);
+    white-space: pre-line;
+  }
+
+  /* ===== HASHTAGS ===== */
+  .hashtag-section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 36px 32px;
+  }
+
+  .hashtag-group {
+    margin-bottom: 28px;
+  }
+
+  .hashtag-group-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 14px;
+  }
+
+  .hashtag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .hashtag {
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    font-size: 13px;
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.5px;
+    background: rgba(240,180,41,0.04);
+  }
+
+  /* ===== POSTING SCHEDULE ===== */
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .schedule-card {
+    background: var(--card);
+    padding: 28px 24px;
+  }
+
+  .schedule-platform {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .schedule-freq {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .schedule-tips {
+    font-size: 13px;
+    color: var(--grey);
+    line-height: 1.7;
+  }
+
+  .schedule-tips li {
+    list-style: none;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+
+  .schedule-tips li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold-dim);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--grey);
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  footer strong {
+    color: var(--gold);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  /* ===== QUOTE BLOCK ===== */
+  .tagline-block {
+    border-left: 4px solid var(--gold);
+    padding: 20px 28px;
+    margin: 32px 0;
+    background: rgba(240,180,41,0.04);
+  }
+
+  .tagline-block blockquote {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: 1px;
+  }
+
+  .tagline-block span {
+    font-size: 13px;
+    color: var(--grey);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+
+  @media (max-width: 640px) {
+    .calendar-table { font-size: 12px; }
+    .calendar-table th, .calendar-table td { padding: 12px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Social Media Presence Kit · 2025</p>
+  <h1>
+    <span class="edidyong">Edidyong</span>
+    <span class="arena">Arena</span>
+  </h1>
+  <p class="hero-sub">A complete brand awareness strategy for Nigeria's premier sports &amp; events venue — built for reach, recognition, and roar.</p>
+  <div class="platforms-row">
+    <div class="platform-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      Instagram
+    </div>
+    <div class="platform-badge">
+      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Facebook
+    </div>
+    <div class="platform-badge">
+      <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.56V6.79a4.85 4.85 0 01-1.07-.1z"/></svg>
+      TikTok
+    </div>
+    <div class="platform-badge">
+      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Twitter / X
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BRAND IDENTITY -->
+<div class="section">
+  <p class="section-label">01 — Brand Identity</p>
+  <h2 class="section-title">Who Edidyong Arena Is</h2>
+
+  <div class="tagline-block">
+    <blockquote>"Where Champions Are Made &amp; Memories Last"</blockquote>
+    <span>Proposed Brand Tagline</span>
+  </div>
+
+  <div class="brand-grid">
+    <div class="brand-block">
+      <p class="brand-block-label">Brand Colors</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <div>
+          <div class="color-swatch" style="background:#0a1628;border:1px solid #252830;"></div>
+          <div class="swatch-name">Arena Black</div>
+          <div class="swatch-hex">#0A1628</div>
+        </div>
+        <div>
+          <div class="color-swatch" style="background:#C8960C;"></div>
+          <div class="swatch-name">Victory Gold</div>
+          <div class="swatch-hex">#C8960C</div>
+        </div>
+        <div>
+          <div class="color-swatch" style="background:#B81C1C;"></div>
+          <div class="swatch-name">Power Red</div>
+          <div class="swatch-hex">#B81C1C</div>
+        </div>
+        <div>
+          <div class="color-swatch" style="background:#F4F4F0;border:1px solid #252830;"></div>
+          <div class="swatch-name">Clean White</div>
+          <div class="swatch-hex">#F4F4F0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="brand-block">
+      <p class="brand-block-label">Brand Voice</p>
+      <p style="font-size:14px;color:var(--grey);margin-bottom:14px;">Bold, energetic, community-proud. Speak like a hype-man who also knows the stats.</p>
+      <div class="voice-tags">
+        <span class="voice-tag">Energetic</span>
+        <span class="voice-tag">Proud</span>
+        <span class="voice-tag">Inclusive</span>
+        <span class="voice-tag">Bold</span>
+        <span class="voice-tag">Local-first</span>
+        <span class="voice-tag">Authoritative</span>
+      </div>
+    </div>
+
+    <div class="brand-block">
+      <p class="brand-block-label">Tone by Platform</p>
+      <div style="font-size:13px;color:var(--light);line-height:2;">
+        <div><span style="color:var(--gold);font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;font-size:12px;">INSTAGRAM</span> — Visual hype, short punchy copy</div>
+        <div><span style="color:var(--gold);font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;font-size:12px;">FACEBOOK</span> — Community-focused, event info rich</div>
+        <div><span style="color:var(--gold);font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;font-size:12px;">TIKTOK</span> — Raw, fun, behind-the-scenes energy</div>
+        <div><span style="color:var(--gold);font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;font-size:12px;">TWITTER/X</span> — Live reactions, match commentary, wit</div>
+      </div>
+    </div>
+
+    <div class="brand-block">
+      <p class="brand-block-label">Username Suggestions</p>
+      <div style="font-size:14px;color:var(--light);line-height:2.2;font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;">
+        <div style="color:var(--white);">@EdidyongArena</div>
+        <div style="color:var(--grey);">@EdidyongArenaLtd</div>
+        <div style="color:var(--grey);">@TheEdidyongArena</div>
+      </div>
+      <p style="font-size:12px;color:var(--grey);margin-top:8px;">Use same handle across all platforms for consistency.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PLATFORM BIOS -->
+<div class="section">
+  <p class="section-label">02 — Platform Bios</p>
+  <h2 class="section-title">Ready-to-Post Profiles</h2>
+
+  <div class="bio-grid">
+    <div class="bio-card ig">
+      <p class="bio-platform">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#c13584"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </p>
+      <div class="bio-handle">@EdidyongArena</div>
+      <div class="bio-text">🏟️ Nigeria's Premier Sports & Events Venue
+🔥 Home of Champions | Where the Crowd Roars
+🎟️ Book Your Event → Link Below
+📍 [City, Nigeria]</div>
+      <p class="bio-char-count">~120 chars · Fits Instagram 150-char limit</p>
+    </div>
+
+    <div class="bio-card fb">
+      <p class="bio-platform">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook Page
+      </p>
+      <div class="bio-handle">Edidyong Arena Ltd</div>
+      <div class="bio-text">Edidyong Arena Ltd is [City]'s leading multi-purpose sports and events venue. From electrifying football matches to world-class concerts and corporate events — we are the heartbeat of live entertainment in the region.
+
+📞 [Phone] | 📧 [Email] | 📍 [Address]</div>
+      <p class="bio-char-count">~280 chars · Use in "About" section</p>
+    </div>
+
+    <div class="bio-card tt">
+      <p class="bio-platform">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.56V6.79a4.85 4.85 0 01-1.07-.1z"/></svg>
+        TikTok
+      </p>
+      <div class="bio-handle">@EdidyongArena</div>
+      <div class="bio-text">🏟️ The arena that never sleeps
+🎬 Behind the scenes | Match days | Events
+📍 Nigeria's loudest venue</div>
+      <p class="bio-char-count">~100 chars · Casual, scroll-stopping</p>
+    </div>
+
+    <div class="bio-card tw">
+      <p class="bio-platform">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#1d9bf0"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Twitter / X
+      </p>
+      <div class="bio-handle">@EdidyongArena</div>
+      <div class="bio-text">🏟️ Nigeria's Premier Sports & Events Venue | Live scores, event updates & arena news | 📍 [City] | Tickets 👇</div>
+      <p class="bio-char-count">~130 chars · Fits 160-char Twitter limit</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CONTENT PILLARS -->
+<div class="section">
+  <p class="section-label">03 — Content Pillars</p>
+  <h2 class="section-title">What You Post</h2>
+
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <div class="pillar-number">1</div>
+      <div class="pillar-icon">🏆</div>
+      <div class="pillar-name">Match Day Energy</div>
+      <p class="pillar-desc">Live scores, crowd moments, pre-game hype, player spotlights, and post-match reactions. The roar of the arena captured in every post.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-number">2</div>
+      <div class="pillar-icon">🎪</div>
+      <div class="pillar-name">Event Spotlights</div>
+      <p class="pillar-desc">Upcoming events, concert previews, ticket drops, and event recaps. Drive ticket sales and FOMO simultaneously.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-number">3</div>
+      <div class="pillar-icon">🎬</div>
+      <div class="pillar-name">Behind the Scenes</div>
+      <p class="pillar-desc">Set-up timelapse, staff introductions, facility tours. Humanise the brand and build authentic connection with your audience.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-number">4</div>
+      <div class="pillar-icon">🤝</div>
+      <div class="pillar-name">Community Pride</div>
+      <p class="pillar-desc">Fan features, local team shoutouts, youth sports programmes. Position Edidyong Arena as the community's home ground.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-number">5</div>
+      <div class="pillar-icon">📣</div>
+      <div class="pillar-name">Venue Hire & CSR</div>
+      <p class="pillar-desc">Corporate event showcases, charity activations, school partnerships. Build the venue's premium and responsible reputation.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CONTENT CALENDAR -->
+<div class="section">
+  <p class="section-label">04 — Content Calendar</p>
+  <h2 class="section-title">Week One Playbook</h2>
+
+  <div style="overflow-x:auto;">
+    <table class="calendar-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Format</th>
+          <th>Content Idea</th>
+          <th>Platforms</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="day-label">MON</div></td>
+          <td><span class="post-type type-photo">Photo</span></td>
+          <td>
+            <strong>Arena Intro Post</strong><br>
+            <span style="color:var(--grey);font-size:13px;">Cinematic wide-shot of the arena with tagline overlay. "Welcome to the home of greatness."</span>
+          </td>
+          <td><div class="platform-dots"><span class="pdot">IG</span><span class="pdot">FB</span><span class="pdot">X</span></div></td>
+        </tr>
+        <tr>
+          <td><div class="day-label">TUE</div></td>
+          <td><span class="post-type type-reel">Reel</span></td>
+          <td>
+            <strong>Arena Walkthrough Reel</strong><br>
+            <span style="color:var(--grey);font-size:13px;">15–30 sec tour of the facilities set to trending audio. High energy cuts.</span>
+          </td>
+          <td><div class="platform-dots"><span class="pdot">IG</span><span class="pdot">TT</span></div></td>
+        </tr>
+        <tr>
+          <td><div class="day-label">WED</div></td>
+          <td><span class="post-type type-carousel">Carousel</span></td>
+          <td>
+            <strong>"5 Reasons to Love Edidyong Arena"</strong><br>
+            <span style="color:var(--grey);font-size:13px;">5-slide carousel: capacity, facilities, location, history, events lineup. Great for saves.</span>
+          </td>
+          <td><div class="platform-dots"><span class="pdot">IG</span><span class="pdot">FB</span></div></td>
+        </tr>
+        <tr>
+          <td><div class="day-label">THU</div></td>
+          <td><span class="post-type type-story">Story / Poll</span></td>
+          <td>
+            <strong>Fan Poll</strong><br>
+            <span style="color:var(--grey);font-size:13px;">"What event would you LOVE to see at Edidyong Arena?" — drives engagement and market research simultaneously.</span>
+          </td>
+          <td><div class="platform-dots"><span class="pdot">IG</span><span class="pdot">FB</span><span class="pdot">X</span></div></td>
+        </tr>
+        <tr>
+          <td><div class="day-label">FRI</div></td>
+          <td><span class="post-type type-reel">Reel / TikTok</span></td>
+          <td>
+            <strong>Weekend Hype Drop</strong><br>
+            <span style="color:var(--grey);font-size:13px;">"It's Friday and the arena is READY 🔥" — behind-the-scenes prep for the weekend's event.</span>
+          </td>
+          <td><div class="platform-dots"><span class="pdot">TT</span><span class="pdot">IG</span></div></td>
+        </tr>
+        <tr>
+          <td><div class="day-label">SAT</div></td>
+          <td><span class="post-type type-photo">Live Coverage</span></td>
+          <td>
+            <strong>Event Day Live Posts</strong><br>
+            <span style="color:var(--grey);font-size:13px;">3–5 story updates during event. Crowd shots, moments, atmosphere. Real-time Twitter commentary.</span>
+          </td>
+          <td><div class="platform-dots"><span class="pdot">IG</span><span class="pdot">FB</span><span class="pdot">X</span><span class="pdot">TT</span></div></td>
+        </tr>
+        <tr>
+          <td><div class="day-label">SUN</div></td>
+          <td><span class="post-type type-carousel">Recap</span></td>
+          <td>
+            <strong>Weekend Recap Post</strong><br>
+            <span style="color:var(--grey);font-size:13px;">Best moments collage. "What a weekend at Edidyong Arena! 🙌 See you next time." Tag fans who attended.</span>
+          </td>
+          <td><div class="platform-dots"><span class="pdot">IG</span><span class="pdot">FB</span></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SAMPLE CAPTIONS -->
+<div class="section">
+  <p class="section-label">05 — Sample Captions</p>
+  <h2 class="section-title">Copy &amp; Post</h2>
+
+  <div class="captions-grid">
+    <div class="caption-card">
+      <p class="caption-use">🏟️ Grand Opening / Launch Post</p>
+      <p class="caption-body">The stage is set. The lights are on. The crowd is calling.
+
+Edidyong Arena Ltd is officially OPEN — and we're just getting started. 🔥
+
+From epic match days to concerts that shake the stands, this is your new home for unforgettable experiences.
+
+📍 [Location] | 🎟️ Link in bio
+
+#EdidyongArena #NigeriaEvents #ArenaLife #WeAreEdidyong</p>
+    </div>
+
+    <div class="caption-card">
+      <p class="caption-use">⚽ Match Day Hype</p>
+      <p class="caption-body">MATCH DAY. ⚽🔥
+
+The roar of the crowd. The electricity in the air. The moment that gives you chills every single time.
+
+Edidyong Arena is ready — are YOU?
+
+Gates open: [Time]
+📍 [Location]
+🎟️ Get your tickets → Link in bio
+
+Come through and feel it for yourself. 🏟️
+
+#MatchDay #EdidyongArena #NigeriaFootball #LiveSports</p>
+    </div>
+
+    <div class="caption-card">
+      <p class="caption-use">🎬 Behind the Scenes / TikTok</p>
+      <p class="caption-body">POV: You're setting up for the biggest event of the year 👀🏟️
+
+From empty stands to a packed house — this is the magic that happens behind the scenes at Edidyong Arena.
+
+Follow for more BTS content! 🎬
+
+#EdidyongArena #BehindTheScenes #ArenaLife #NigeriaEvents #FYP</p>
+    </div>
+
+    <div class="caption-card">
+      <p class="caption-use">📣 Event Announcement</p>
+      <p class="caption-body">🚨 BIG ANNOUNCEMENT 🚨
+
+[Event Name] is coming to Edidyong Arena on [Date]!
+
+This is the one you've been waiting for. Don't sleep on it — tickets are moving FAST.
+
+📅 Date: [Date]
+⏰ Time: [Time]
+📍 Edidyong Arena, [Location]
+🎟️ Tickets: Link in bio
+
+Tag a friend who NEEDS to be there! 👇
+
+#EdidyongArena #[EventName] #Nigeria #LiveEvents</p>
+    </div>
+
+    <div class="caption-card">
+      <p class="caption-use">🤝 Community / Fan Feature</p>
+      <p class="caption-body">Our fans make us who we are. 🙏❤️
+
+Meet [Fan Name] — a die-hard Edidyong Arena supporter who hasn't missed a single event this season. Stories like this remind us WHY we do what we do.
+
+Want to be featured? Drop a comment below or tag us in your arena photos! 📸
+
+#EdidyongArena #FanLove #OurCommunity #Nigeria</p>
+    </div>
+
+    <div class="caption-card">
+      <p class="caption-use">🏢 Venue Hire (Facebook / LinkedIn tone)</p>
+      <p class="caption-body">Looking for a world-class venue for your next corporate event, product launch, or private function?
+
+Edidyong Arena Ltd offers state-of-the-art facilities, flexible configurations, and a dedicated events team to bring your vision to life.
+
+✅ Capacity: [Number]
+✅ Full AV &amp; lighting setup
+✅ Catering options available
+✅ Ample parking
+
+📧 [Email] | 📞 [Phone]
+
+Let's build something unforgettable together. 🤝
+
+#VenueHire #NigeriaEvents #EdidyongArena #CorporateEvents</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- HASHTAGS -->
+<div class="section">
+  <p class="section-label">06 — Hashtag Strategy</p>
+  <h2 class="section-title">Own Your Tags</h2>
+
+  <div class="hashtag-section">
+    <div class="hashtag-group">
+      <p class="hashtag-group-label">Brand Hashtags (always use)</p>
+      <div class="hashtag-cloud">
+        <span class="hashtag">#EdidyongArena</span>
+        <span class="hashtag">#WeAreEdidyong</span>
+        <span class="hashtag">#EdidyongArenaLtd</span>
+        <span class="hashtag">#TheArenaExperience</span>
+      </div>
+    </div>
+
+    <div class="hashtag-group">
+      <p class="hashtag-group-label">Sports & Events (rotate per post)</p>
+      <div class="hashtag-cloud">
+        <span class="hashtag">#NigeriaFootball</span>
+        <span class="hashtag">#NigeriaEvents</span>
+        <span class="hashtag">#LiveSports</span>
+        <span class="hashtag">#MatchDay</span>
+        <span class="hashtag">#NigeriaEntertainment</span>
+        <span class="hashtag">#ArenaLife</span>
+        <span class="hashtag">#NaijaEvents</span>
+        <span class="hashtag">#SportNigeria</span>
+      </div>
+    </div>
+
+    <div class="hashtag-group">
+      <p class="hashtag-group-label">Reach & Discovery (use on TikTok & Reels)</p>
+      <div class="hashtag-cloud">
+        <span class="hashtag">#Nigeria</span>
+        <span class="hashtag">#Naija</span>
+        <span class="hashtag">#LiveEvents</span>
+        <span class="hashtag">#EventVenue</span>
+        <span class="hashtag">#FYP</span>
+        <span class="hashtag">#NigeriaTwitter</span>
+        <span class="hashtag">#AfricanSports</span>
+        <span class="hashtag">#VenueGoals</span>
+      </div>
+    </div>
+
+    <div class="hashtag-group" style="margin-bottom:0;">
+      <p class="hashtag-group-label">Recommended Count Per Platform</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:8px;">
+        <div style="font-size:14px;color:var(--light);"><span style="color:var(--gold);font-family:'Barlow Condensed',sans-serif;display:block;letter-spacing:2px;font-size:12px;margin-bottom:4px;">INSTAGRAM</span>5–10 hashtags</div>
+        <div style="font-size:14px;color:var(--light);"><span style="color:var(--gold);font-family:'Barlow Condensed',sans-serif;display:block;letter-spacing:2px;font-size:12px;margin-bottom:4px;">FACEBOOK</span>2–4 hashtags</div>
+        <div style="font-size:14px;color:var(--light);"><span style="color:var(--gold);font-family:'Barlow Condensed',sans-serif;display:block;letter-spacing:2px;font-size:12px;margin-bottom:4px;">TIKTOK</span>4–6 hashtags</div>
+        <div style="font-size:14px;color:var(--light);"><span style="color:var(--gold);font-family:'Barlow Condensed',sans-serif;display:block;letter-spacing:2px;font-size:12px;margin-bottom:4px;">TWITTER/X</span>1–2 hashtags</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- POSTING SCHEDULE -->
+<div class="section">
+  <p class="section-label">07 — Posting Schedule</p>
+  <h2 class="section-title">Consistency Is King</h2>
+
+  <div class="schedule-grid">
+    <div class="schedule-card">
+      <div class="schedule-platform">Instagram</div>
+      <div class="schedule-freq">4–5 × per week</div>
+      <ul class="schedule-tips">
+        <li>Feed posts: Mon, Wed, Fri</li>
+        <li>Reels: Tue, Thu or Fri</li>
+        <li>Stories: Daily (event days especially)</li>
+        <li>Best times: 7–9am or 6–9pm WAT</li>
+      </ul>
+    </div>
+
+    <div class="schedule-card">
+      <div class="schedule-platform">Facebook</div>
+      <div class="schedule-freq">3–4 × per week</div>
+      <ul class="schedule-tips">
+        <li>Event announcements: 72hrs before</li>
+        <li>Recaps: Sunday afternoon</li>
+        <li>Venue hire posts: mid-week</li>
+        <li>Best times: 1–4pm WAT</li>
+      </ul>
+    </div>
+
+    <div class="schedule-card">
+      <div class="schedule-platform">TikTok</div>
+      <div class="schedule-freq">3–5 × per week</div>
+      <ul class="schedule-tips">
+        <li>BTS content: Tue, Thu</li>
+        <li>Event hype: Fri before events</li>
+        <li>Duet/stitch fan content weekly</li>
+        <li>Best times: 7–9pm WAT</li>
+      </ul>
+    </div>
+
+    <div class="schedule-card">
+      <div class="schedule-platform">Twitter / X</div>
+      <div class="schedule-freq">Daily (event days: 5+)</div>
+      <ul class="schedule-tips">
+        <li>Live commentary during events</li>
+        <li>Morning hype tweets on event days</li>
+        <li>Retweet fan mentions always</li>
+        <li>Best times: 8am & 8pm WAT</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- QUICK WINS -->
+<div class="section">
+  <p class="section-label">08 — Quick Wins</p>
+  <h2 class="section-title">First 30 Days</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+    <div style="border:1px solid var(--border);padding:28px 24px;background:var(--card);">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(240,180,41,0.2);line-height:1;margin-bottom:8px;">01</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Set Up All Profiles</div>
+      <p style="font-size:13px;color:var(--grey);line-height:1.6;">Use the same handle, same profile photo (logo), and same cover image across all platforms. Link all accounts in your bio where possible.</p>
+    </div>
+    <div style="border:1px solid var(--border);padding:28px 24px;background:var(--card);">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(240,180,41,0.2);line-height:1;margin-bottom:8px;">02</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Post 3 Foundation Posts</div>
+      <p style="font-size:13px;color:var(--grey);line-height:1.6;">Before inviting anyone to follow you, have at least 3 quality posts live — an intro, a facility showcase, and an upcoming event teaser.</p>
+    </div>
+    <div style="border:1px solid var(--border);padding:28px 24px;background:var(--card);">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(240,180,41,0.2);line-height:1;margin-bottom:8px;">03</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Tag Local Teams & Partners</div>
+      <p style="font-size:13px;color:var(--grey);line-height:1.6;">Tag sports teams, promoters, and local businesses in posts. Their followers discover you, and you build community goodwill fast.</p>
+    </div>
+    <div style="border:1px solid var(--border);padding:28px 24px;background:var(--card);">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(240,180,41,0.2);line-height:1;margin-bottom:8px;">04</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Run a Follow + Win Promo</div>
+      <p style="font-size:13px;color:var(--grey);line-height:1.6;">Launch a free ticket giveaway: "Follow us + tag a friend to win 2 tickets." Low cost, massive organic reach, and instant follower growth.</p>
+    </div>
+    <div style="border:1px solid var(--border);padding:28px 24px;background:var(--card);">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(240,180,41,0.2);line-height:1;margin-bottom:8px;">05</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Reply to Every Comment</div>
+      <p style="font-size:13px;color:var(--grey);line-height:1.6;">In the first 30 days, reply to EVERY comment and DM. The algorithm rewards engagement and fans remember when a brand speaks to them.</p>
+    </div>
+    <div style="border:1px solid var(--border);padding:28px 24px;background:var(--card);">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(240,180,41,0.2);line-height:1;margin-bottom:8px;">06</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Shoot a Hero Reel</div>
+      <p style="font-size:13px;color:var(--grey);line-height:1.6;">Invest in one high-quality 30-second cinematic reel of the arena. This is your pinned post and the piece of content that makes people say "wow."</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>EDIDYONG ARENA LTD</strong><br>
+  <span style="margin-top:8px;display:block;">Social Media Presence Kit · Prepared for Brand Awareness Launch · 2025</span>
+  <span style="color:#3d4050;margin-top:4px;display:block;">Fill in [bracketed fields] with your actual details before posting.</span>
+</footer>
+
+</body>
+</html>
